@@ -1,11 +1,16 @@
-all: libhelpers.so
+CC = gcc
+SRC = helpers.h helpers.c
+C_FLAGS = -fPIC -shared
 
-libhelpers.so: helpers.o
-	gcc -shared helpers.o -o libhelpers.so
+all: libhelpers.so clean_o
 
-helpers.o:
-	gcc -c -fPIC -std=c99 helpers.c -o helpers.o
+libhelpers.so:
+	$(CC) -o libhelpers.so $(C_FLAGS) $(SRC)
+
+clean_o:
+	rm -rf *.o
 
 clean:
-	rm -f helpers.o
-	rm -f libhelpers.so 
+	rm -rf *.o
+	rm -rf *.so
+
