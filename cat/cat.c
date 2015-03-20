@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <helpers.h>
-const size_t BLOCK_SIZE = 4096;
+size_t BLOCK_SIZE;
 
 void print_err() {
   char *msg = strerror(errno);
