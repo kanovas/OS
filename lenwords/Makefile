@@ -1,6 +1,6 @@
 CC = gcc
 SRC = lenwords.c
-C_FLAGS = -fPIC -L../lib/ -I../lib/ -Wl,-R../lib/
+C_FLAGS = -L../lib/ -I../lib/ -Wl,-R../lib/
 
 all: lenwords
 
